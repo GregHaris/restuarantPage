@@ -33,7 +33,7 @@ h3 {
 
 header {
   display: grid;
-  place-content: center;
+  align-content: center;
   background: var(--primary-bg-clr);
   height: 14em;
   width: 100%;
@@ -71,10 +71,5 @@ nav > button:hover {
 
   header nav {
     flex-direction: row;
-    padding: 0.5em;
-    gap: 1em;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
   }
 }
