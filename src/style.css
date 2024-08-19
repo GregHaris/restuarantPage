@@ -1,6 +1,7 @@
 :root {
   --primary-bg-clr: rgb(125, 30, 30);
   --secondary-bg-clr:rgb(232, 225, 212);
+  --dark-clr:rgb(35, 11, 11);
 }
 
 *,
@@ -8,12 +9,16 @@
 *::after {
   box-sizing: border-box;
 }
+
 * {
   margin: 0;
+  color: var(--dark-clr);
 }
+
 body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  background: var(--secondary-bg-clr);
 }
 img,
 svg {
