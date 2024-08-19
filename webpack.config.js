@@ -1,6 +1,5 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const { watchFile } = require("fs");
 
 module.exports = {
   mode: "development",
@@ -12,7 +11,7 @@ module.exports = {
   },
   devtool: "eval-source-map",
   devServer: {
- watchFiles: ["./src/template.html"]
+    watchFiles: ["./src/template.html"],
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -26,8 +25,12 @@ module.exports = {
         use: ["style-loader", "css-loader"],
       },
       {
+        test: /\.html$/i,
+        loader: "html-loader",
+      },
+      {
         test: /\.(png|svg|jpeg|jpg|gif)$/i,
-        type: "asset/ resource"
+        type: "asset/resource",
       },
     ],
   },
