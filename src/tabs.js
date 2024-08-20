@@ -13,6 +13,10 @@ const createTabs = (() => {
   menuBtn.classList.add("tab");
   contactBtn.classList.add("tab");
 
+  homeBtn.textContent = "Home";
+  menuBtn.textContent = "Menu";
+  contactBtn.textContent = "Contact"
+
   navBar.append(homeBtn, menuBtn, contactBtn)
 })();
 
