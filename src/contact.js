@@ -7,7 +7,13 @@ const createContactPage = () => {
   form.classList.add("contact-form");
 
   // create form builder function
-  const createInputField = (labelText, inputType, inputId, placeholder, required = false) => {
+  const createInputField = (
+    labelText,
+    inputType,
+    inputId,
+    placeholder,
+    required = false
+  ) => {
     const container = document.createElement("div");
     const label = document.createElement("label");
     label.setAttribute("for", inputId);
@@ -49,9 +55,20 @@ const createContactPage = () => {
 
   form.append(
     createInputField("Name: ", "text", "nameInput", "e.g., John Strung", true),
-    createInputField("Address: ", "text", "addressInput", "e.g., 12 Tedt drive, Wiyoma"),
+    createInputField(
+      "Address: ",
+      "text",
+      "addressInput",
+      "e.g., 12 Tedt drive, Wiyoma"
+    ),
     createInputField("Phone Number: ", "tel", "telNoInput", "e.g., +233568878"),
-    createInputField("Email: ", "email", "emailInput", "e.g., jon@example.com", true),
+    createInputField(
+      "Email: ",
+      "email",
+      "emailInput",
+      "e.g., jon@example.com",
+      true
+    ),
     createTextareaField("Enter your Message: ", "msgInput"),
     createSubmitButton("Submit")
   );
