@@ -3,6 +3,9 @@ const createMenuPage = () => {
   const pageContent = document.createElement("div");
   pageContent.classList.add("page-content");
 
+  const menuPageContainer = document.createElement("div")
+  menuPageContainer.classList.add("menu-list-container")
+
   const menuPgHeading = document.createElement("h1");
   menuPgHeading.classList.add("menu-page-heading");
   menuPgHeading.textContent = "Our Menu";
@@ -20,7 +23,9 @@ const createMenuPage = () => {
 
   menuList.append(menuItem1, menuItem2, menuItem3, menuItem4);
 
-  pageContent.append(menuPgHeading, menuList);
+  menuPageContainer.append(menuPgHeading, menuList)
+
+  pageContent.append(menuPageContainer);
 
   contentDiv.appendChild(pageContent)
 };
