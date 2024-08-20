@@ -3,8 +3,18 @@ const createContactPage = () => {
   const pageContent = document.createElement("div");
   pageContent.classList.add("page-content");
 
+  const contactFormContainer = document.createElement("div")
+  contactFormContainer.classList.add("contact-form-container")
+
   const form = document.createElement("form");
   form.classList.add("contact-form");
+
+  const createElementWithText = (tagName, text, className) => {
+    const element = document.createElement(tagName);
+    element.textContent = text;
+    if (className) element.classList.add(className);
+    return element;
+  };
 
   // create form builder function
   const createInputField = (
@@ -59,9 +69,10 @@ const createContactPage = () => {
       "Address: ",
       "text",
       "addressInput",
-      "e.g., 12 Tedt drive, Wiyoma"
+      "e.g., 12 Tedt drive, Wiyoma",
+      true
     ),
-    createInputField("Phone Number: ", "tel", "telNoInput", "e.g., +233568878"),
+    createInputField("Phone Number: ", "tel", "telNoInput", "e.g., +233568878", true),
     createInputField(
       "Email: ",
       "email",
@@ -73,7 +84,8 @@ const createContactPage = () => {
     createSubmitButton("Submit")
   );
 
-  pageContent.appendChild(form);
+  contactFormContainer.appendChild(form);
+  pageContent.appendChild(contactFormContainer)
   contentDiv.appendChild(pageContent);
 };
 
