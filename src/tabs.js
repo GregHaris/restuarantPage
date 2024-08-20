@@ -1,23 +1,41 @@
+import createRestaurantHomePage from "./homepage";
+import createMenuPage from "./menu";
+import createContactPage from "./contact";
+
 const createTabs = (() => {
   const navBar = document.querySelector("nav");
 
-  const homeBtn = document.createElement("button");
-  const menuBtn = document.createElement("button");
-  const contactBtn = document.createElement("button");
+  // tap buttons creation factory
+  const createTabButton = (id, text, onClick) => {
+    const button = document.createElement("button");
+    button.id = id;
+    button.classList.add("tab");
+    button.textContent = text;
+    button.addEventListener("click", () => {
+      clearContent();
+      onClick();
+    });
+    return button;
+  };
 
-  homeBtn.id =  "homeBtn";
-  menuBtn.id =  "menuBtn";
-  contactBtn.id =  "contact";
+  // creating tab buttons
+  const homeBtn = createTabButton("homeBtn", "Home", createRestaurantHomePage);
+  const menuBtn = createTabButton("menuBtn", "Menu", createMenuPage);
+  const contactBtn = createTabButton(
+    "contactBtn",
+    "Contact",
+    createContactPage
+  );
 
-  homeBtn.classList.add("tab");
-  menuBtn.classList.add("tab");
-  contactBtn.classList.add("tab");
-
-  homeBtn.textContent = "Home";
-  menuBtn.textContent = "Menu";
-  contactBtn.textContent = "Contact"
-
-  navBar.append(homeBtn, menuBtn, contactBtn)
+  navBar.append(homeBtn, menuBtn, contactBtn);
 })();
+
+function clearContent() {
+  const contentDiv = document.querySelector("#content");
+
+  while (contentDiv.firstChild) {
+    contentDiv.removeChild(contentDiv.firstChild);
+  }
+}
 
 export default createTabs;
