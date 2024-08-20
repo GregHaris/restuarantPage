@@ -28,4 +28,6 @@ const createRestaurantHomePage = () => {
   contentDiv.appendChild(pageContent);
 };
 
+createRestaurantHomePage()
+
 export default createRestaurantHomePage;
