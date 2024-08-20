@@ -13,7 +13,7 @@ const createContactPage = (() => {
   nameInputLabel.textContent = "Name: ";
   const nameInput = document.createElement("input");
   nameInput.type = "text";
-  nameInput.setAttribute("id", "nameInput");
+  nameInput.id = "nameInput";
   nameInput.required = true;
   nameInput.placeholder = "e.g., John Strung";
   nameInputContainer.append(nameInputLabel, nameInput);
@@ -25,7 +25,7 @@ const createContactPage = (() => {
   addressInputLabel.textContent = "Address: ";
   const addressInput = document.createElement("input");
   addressInput.type = "text";
-  addressInput.setAttribute("id", "addressInput");
+  addressInput.id = "addressInput";
   addressInput.placeholder = "e.g., 12 Tedt drive, Wiyoma";
   addressInputContainer.append(addressInputLabel, addressInput);
 
@@ -36,7 +36,7 @@ const createContactPage = (() => {
   telNoInputLabel.textContent = "Phone Number: ";
   const telNoInput = document.createElement("input");
   telNoInput.type = "tel";
-  telNoInput.setAttribute("id", "telNoInput");
+  telNoInput.id = "telNoInput";
   telNoInput.placeholder = "e.g., +233568878";
   telNoInputContainer.append(telNoInputLabel, telNoInput);
 
@@ -47,7 +47,7 @@ const createContactPage = (() => {
   emailInputLabel.textContent = "Email: ";
   const emailInput = document.createElement("input");
   emailInput.type = "email";
-  emailInput.setAttribute("id", "emailInput");
+  emailInput.id = "emailInput";
   emailInput.required = true;
   emailInput.placeholder = "e.g., youremail@example.com";
   emailInputContainer.append(emailInputLabel, emailInput);
@@ -58,7 +58,7 @@ const createContactPage = (() => {
   msgInputLabel.setAttribute("for", "msgInput");
   msgInputLabel.textContent = "Enter your Message: ";
   const msgInput = document.createElement("textarea");
-  msgInput.setAttribute("id", "msgInput");
+  msgInput.id = "msgInput";
   msgInputContainer.append(msgInputLabel, msgInput);
 
   //create and append the submit button;
@@ -66,7 +66,7 @@ const createContactPage = (() => {
   const submitBtn = document.createElement("button");
   submitBtn.textContent = "Submit";
   submitBtn.type = "submit";
-  submitBtn.setAttribute("id", "submit");
+  submitBtn.id = "submit";
   submitBtnContainer.append(submitBtn);
 
   form.append(

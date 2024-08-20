@@ -5,9 +5,9 @@ const createTabs = (() => {
   const menuBtn = document.createElement("button");
   const contactBtn = document.createElement("button");
 
-  homeBtn.setAttribute("id", "homeBtn");
-  menuBtn.setAttribute("id", "menuBtn");
-  contactBtn.setAttribute("id", "contact");
+  homeBtn.id =  "homeBtn";
+  menuBtn.id =  "menuBtn";
+  contactBtn.id =  "contact";
 
   homeBtn.classList.add("tab");
   menuBtn.classList.add("tab");
