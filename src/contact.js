@@ -1,10 +1,10 @@
 const createContactPage = (() => {
   const contentDiv = document.querySelector("#content");
   const pageContent = document.createElement("div");
-  pageContent.setAttribute("class", "page-content");
+  pageContent.classList.add("page-content");
 
   const form = document.createElement("form");
-  form.setAttribute("class", "contact-form");
+  form.classList.add("contact-form");
 
   // create and append the name input
   const nameInputContainer = document.createElement("div");
