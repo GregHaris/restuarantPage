@@ -1,4 +1,4 @@
-const createContactPage = (() => {
+const createContactPage = () => {
   const contentDiv = document.querySelector("#content");
   const pageContent = document.createElement("div");
   pageContent.classList.add("page-content");
@@ -81,6 +81,6 @@ const createContactPage = (() => {
   pageContent.appendChild(form);
 
   contentDiv.appendChild(pageContent);
-})();
+};
 
 export default createContactPage;
