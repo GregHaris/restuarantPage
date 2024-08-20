@@ -20,8 +20,8 @@ const createRestaurantHomePage = () => {
   const contentDiv = document.querySelector("#content");
   const pageContent = document.createElement("div");
   pageContent.classList.add("page-content");
- const homePageTextContainer = document.createElement("div");
- homePageTextContainer.classList.add("home-page-text-container")
+  const homePageTextContainer = document.createElement("div");
+  homePageTextContainer.classList.add("home-page-text-container");
 
   //create and append the logo
   const logo = createImageElement(
@@ -43,7 +43,7 @@ const createRestaurantHomePage = () => {
   );
   homePageTextContainer.appendChild(copy);
 
-  pageContent.appendChild(homePageTextContainer)
+  pageContent.appendChild(homePageTextContainer);
 
   contentDiv.appendChild(pageContent);
 };
