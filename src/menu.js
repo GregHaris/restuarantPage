@@ -1,14 +1,14 @@
 const createMenuPage = () => {
   const contentDiv = document.querySelector("#content");
   const pageContent = document.createElement("div");
-  pageContent.setAttribute("class", "page-content");
+  pageContent.classList.add("page-content");
 
   const menuPgHeading = document.createElement("h1");
-  menuPgHeading.setAttribute("class", "menu-page-heading");
+  menuPgHeading.classList.add("menu-page-heading");
   menuPgHeading.textContent = "Our Menu";
 
   const menuList = document.createElement("ul");
-  menuList.setAttribute("class", "menu-list");
+  menuList.classList.add("menu-list");
   const menuItem1 = document.createElement("li");
   menuItem1.textContent = "Spaghetti";
   const menuItem2 = document.createElement("li");
