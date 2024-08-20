@@ -6,80 +6,57 @@ const createContactPage = () => {
   const form = document.createElement("form");
   form.classList.add("contact-form");
 
-  // create and append the name input
-  const nameInputContainer = document.createElement("div");
-  const nameInputLabel = document.createElement("label");
-  nameInputLabel.setAttribute("for", "nameInput");
-  nameInputLabel.textContent = "Name: ";
-  const nameInput = document.createElement("input");
-  nameInput.type = "text";
-  nameInput.id = "nameInput";
-  nameInput.required = true;
-  nameInput.placeholder = "e.g., John Strung";
-  nameInputContainer.append(nameInputLabel, nameInput);
+  // create form builder function
+  const createInputField = (labelText, inputType, inputId, placeholder, required = false) => {
+    const container = document.createElement("div");
+    const label = document.createElement("label");
+    label.setAttribute("for", inputId);
+    label.textContent = labelText;
 
-  // create and append the address input
-  const addressInputContainer = document.createElement("div");
-  const addressInputLabel = document.createElement("label");
-  addressInputLabel.setAttribute("for", "addressInput");
-  addressInputLabel.textContent = "Address: ";
-  const addressInput = document.createElement("input");
-  addressInput.type = "text";
-  addressInput.id = "addressInput";
-  addressInput.placeholder = "e.g., 12 Tedt drive, Wiyoma";
-  addressInputContainer.append(addressInputLabel, addressInput);
+    const input = document.createElement("input");
+    input.type = inputType;
+    input.id = inputId;
+    input.placeholder = placeholder;
+    if (required) input.required = true;
 
-  // create and append the phone number input
-  const telNoInputContainer = document.createElement("div");
-  const telNoInputLabel = document.createElement("label");
-  telNoInputLabel.setAttribute("for", "telNoInput");
-  telNoInputLabel.textContent = "Phone Number: ";
-  const telNoInput = document.createElement("input");
-  telNoInput.type = "tel";
-  telNoInput.id = "telNoInput";
-  telNoInput.placeholder = "e.g., +233568878";
-  telNoInputContainer.append(telNoInputLabel, telNoInput);
+    container.append(label, input);
+    return container;
+  };
 
-  // Create and append the email contact info input
-  const emailInputContainer = document.createElement("div");
-  const emailInputLabel = document.createElement("label");
-  emailInputLabel.setAttribute("for", "emailInput");
-  emailInputLabel.textContent = "Email: ";
-  const emailInput = document.createElement("input");
-  emailInput.type = "email";
-  emailInput.id = "emailInput";
-  emailInput.required = true;
-  emailInput.placeholder = "e.g., youremail@example.com";
-  emailInputContainer.append(emailInputLabel, emailInput);
+  const createTextareaField = (labelText, textareaId) => {
+    const container = document.createElement("div");
+    const label = document.createElement("label");
+    label.setAttribute("for", textareaId);
+    label.textContent = labelText;
 
-  //create the msg text area field;
-  const msgInputContainer = document.createElement("div");
-  const msgInputLabel = document.createElement("label");
-  msgInputLabel.setAttribute("for", "msgInput");
-  msgInputLabel.textContent = "Enter your Message: ";
-  const msgInput = document.createElement("textarea");
-  msgInput.id = "msgInput";
-  msgInputContainer.append(msgInputLabel, msgInput);
+    const textarea = document.createElement("textarea");
+    textarea.id = textareaId;
 
-  //create and append the submit button;
-  const submitBtnContainer = document.createElement("div");
-  const submitBtn = document.createElement("button");
-  submitBtn.textContent = "Submit";
-  submitBtn.type = "submit";
-  submitBtn.id = "submit";
-  submitBtnContainer.append(submitBtn);
+    container.append(label, textarea);
+    return container;
+  };
+
+  const createSubmitButton = (buttonText) => {
+    const container = document.createElement("div");
+    const button = document.createElement("button");
+    button.textContent = buttonText;
+    button.type = "submit";
+    button.id = "submit";
+
+    container.append(button);
+    return container;
+  };
 
   form.append(
-    nameInputContainer,
-    addressInputContainer,
-    telNoInputContainer,
-    emailInputContainer,
-    msgInputContainer,
-    submitBtnContainer
+    createInputField("Name: ", "text", "nameInput", "e.g., John Strung", true),
+    createInputField("Address: ", "text", "addressInput", "e.g., 12 Tedt drive, Wiyoma"),
+    createInputField("Phone Number: ", "tel", "telNoInput", "e.g., +233568878"),
+    createInputField("Email: ", "email", "emailInput", "e.g., jon@example.com", true),
+    createTextareaField("Enter your Message: ", "msgInput"),
+    createSubmitButton("Submit")
   );
 
   pageContent.appendChild(form);
-
   contentDiv.appendChild(pageContent);
 };
 
