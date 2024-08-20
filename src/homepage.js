@@ -38,7 +38,7 @@ const createRestaurantHomePage = () => {
   // Create and append copy element (home page text)
   const copy = createElementWithText(
     "p",
-    "Experience the best. Come have a taste of our food and join the millions who spread the good news of we being the best at what we do",
+    "Experience the best. Come have a taste of our food and join the millions spreading the goodnews of we being the best at what we do",
     "home-page-copy"
   );
   homePageTextContainer.appendChild(copy);
