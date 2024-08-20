@@ -1,4 +1,4 @@
-import HomePageImage from "./img/restuarantHomepage.jpg";
+import restaurantLogo from "./img/restaurantLogo.png";
 
 //restuarant home page
 const createElementWithText = (tagName, text, className) => {
@@ -20,31 +20,30 @@ const createRestaurantHomePage = () => {
   const contentDiv = document.querySelector("#content");
   const pageContent = document.createElement("div");
   pageContent.classList.add("page-content");
+ const homePageTextContainer = document.createElement("div");
+ homePageTextContainer.classList.add("home-page-text-container")
 
+  //create and append the logo
+  const logo = createImageElement(
+    restaurantLogo,
+    "Restuarant Logo image",
+    "logo"
+  );
+
+  pageContent.appendChild(logo);
   // Create and append the headline
-  const headline = createElementWithText(
-    "h1",
-    "Welcome to our restaurant",
-    "headline"
-  );
-  pageContent.appendChild(headline);
-
-  // Create and append the homepage image
-  const image = createImageElement(
-    HomePageImage,
-    "Restaurant home page image",
-    "home-page-image"
-  );
-  pageContent.appendChild(image);
+  const headline = createElementWithText("h1", "Welcome", "headline");
+  homePageTextContainer.appendChild(headline);
 
   // Create and append copy element (home page text)
   const copy = createElementWithText(
     "p",
-    "We are always happy to serve you. We are here because of you. Come have a taste of our food and join the millions who spread the good news of we being the best at what we do",
+    "Experience the best. Come have a taste of our food and join the millions who spread the good news of we being the best at what we do",
     "home-page-copy"
   );
+  homePageTextContainer.appendChild(copy);
 
-  pageContent.appendChild(copy);
+  pageContent.appendChild(homePageTextContainer)
 
   contentDiv.appendChild(pageContent);
 };
