@@ -63,16 +63,15 @@ const createContactPage = () => {
     return container;
   };
 
+  const contactHeading = createElementWithText(
+    "h1",
+    "Contact us",
+    "contact-heading"
+  );
+
   form.append(
     createInputField("Name: ", "text", "nameInput", "e.g., John Strung", true),
-    createInputField(
-      "Address: ",
-      "text",
-      "addressInput",
-      "e.g., 12 Tedt drive, Wiyoma",
-      true
-    ),
-    createInputField("Phone Number: ", "tel", "telNoInput", "e.g., +233568878", true),
+    createInputField("Phone Number: ", "tel", "telNoInput", "e.g., +233568878"),
     createInputField(
       "Email: ",
       "email",
@@ -84,7 +83,7 @@ const createContactPage = () => {
     createSubmitButton("Submit")
   );
 
-  contactFormContainer.appendChild(form);
+  contactFormContainer.append(contactHeading, form);
   pageContent.appendChild(contactFormContainer)
   contentDiv.appendChild(pageContent);
 };
