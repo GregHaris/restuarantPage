@@ -3,7 +3,7 @@
   --transparent-bg: rgba(0, 0, 0, 0.5);
   --light-clr: rgb(251, 249, 244);
   --dark-clr: rgb(35, 11, 11);
-  --textarea-width: 210px;
+  --input-field-width: 220px;
 }
 
 *,
@@ -179,12 +179,12 @@ input {
   outline: none;
   color: var(--dark-clr);
   border: 1px solid var(--dark-clr);
+  width: var(--input-field-width);
 }
 
 .contact-form > div textarea {
-  min-width: var(--textarea-width);
-  max-width: var(--textarea-width);
-  width: var(--textarea-width);
+  min-width: var(--input-field-width);
+  max-width: var(--input-field-width);
 }
 
 #submit {
